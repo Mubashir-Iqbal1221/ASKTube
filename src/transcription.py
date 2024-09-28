@@ -50,8 +50,8 @@ class YouTubeTranscriptionService:
         
         # Fetch the transcript using the video ID
         transcript = self.__fetch_transcript(video_id)
+        print("Transcript: ")
+        from pprint import pprint
+        pprint(transcript)
         
         return transcript, duration
-
-
-
