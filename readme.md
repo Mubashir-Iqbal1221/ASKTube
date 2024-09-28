@@ -14,7 +14,7 @@ AskTube is a web application that allows users to ask questions about the conten
 
 Before you begin, ensure you have the following installed:
 
-- Python 3.8+
+- Python 3.12
 - [YouTube Transcript API](https://pypi.org/project/youtube-transcript-api/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Streamlit](https://streamlit.io/)
