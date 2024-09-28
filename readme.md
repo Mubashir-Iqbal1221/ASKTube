@@ -1,6 +1,4 @@
 
-
-```markdown
 # AskTube
 
 AskTube is a web application that allows users to ask questions about the content of YouTube videos. It leverages FastAPI for the backend, GPT4All for question answering, and Streamlit for the frontend.
