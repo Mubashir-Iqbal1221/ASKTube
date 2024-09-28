@@ -14,7 +14,3 @@ Requests==2.32.3
 streamlit==1.38.0
 youtube_transcript_api==0.6.2
 gpt4all==2.8.2
-python-dotenv==1.0.1
-Requests==2.32.3
-streamlit==1.38.0
-

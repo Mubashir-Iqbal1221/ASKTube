@@ -32,7 +32,7 @@ if st.button("Load Video"):
                 response = requests.post(f"{API_URL}/load_transcript", json={"url": video_link_input})
                 if response.status_code == 200:
                     st.session_state["transcript_loaded"] = True
-                    st.success("Transcript loaded successfully!")
+                    st.success("Video loaded successfully!")
                 else:
                     st.session_state["transcript_loaded"] = False
                     st.error(f"Error loading transcript: {response.json()['detail']}")

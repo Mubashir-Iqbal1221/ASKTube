@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
 
 
 # Initialize logging
