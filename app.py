@@ -20,15 +20,13 @@ logging.basicConfig(level=logging.INFO)
 CONFIG_FILE_PATH = "configs/configs.yaml"
 config = load_config(CONFIG_FILE_PATH)
 
-# Initialize services
+
 api_key = os.getenv("GROQ_API_KEY")
 if not api_key:
     raise ValueError("GROQ_API_KEY is not set in the environment variables.")
 
-# Initialize YouTube QA service
-youtube_qa = YouTubeQA(config["Models"])
 
-# Initialize FastAPI app
+youtube_qa = YouTubeQA(config["Models"])
 app = FastAPI(title="YouTube QA API")
 
 # Data models for request and response bodies
@@ -41,7 +39,6 @@ class Question(BaseModel):
 class Answer(BaseModel):
     answer: str
 
-# Initialize YouTube transcription service
 transcription_service = YouTubeTranscriptionService()
 
 @app.post("/load_transcript", response_model=dict)

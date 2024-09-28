@@ -8,7 +8,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_groq import ChatGroq
 
-# Set up logging
+
 logging.basicConfig(level=logging.INFO)
 
 class YouTubeQA:
@@ -32,16 +32,13 @@ class YouTubeQA:
         self.config = config
         logging.info(f"Initializing with config: {self.config}")
 
-        # Initialize embeddings
         self.embeddings = GPT4AllEmbeddings(
             model_name=self.config["Embeddings"]["model_name"], 
             gpt4all_kwargs={'allow_download': True}
         )
 
-        # Set LLM configuration with error handling for missing values
         self.llm = self._initialize_llm(self.config["GROQ"])
 
-        # Define the prompt template for generating answers
         self.prompt_template = """
                     You are an expert in answering questions based on the content of YouTube videos. 
                     Use only the context provided to answer the user's question concisely, avoiding any introductory or filler phrases.
@@ -131,7 +128,7 @@ class YouTubeQA:
         if self.vectorstore is None:
             raise ValueError("No transcript has been loaded. Please load a transcript first.")
 
-        # Perform similarity search in the vector store
+        # Similarity search in the vector store
         retriever = self.vectorstore.as_retriever(search_kwargs={"k": self.config["Rag"]["k"]})
         logging.info("Chain Invoked")
 
