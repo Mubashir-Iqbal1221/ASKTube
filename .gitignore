@@ -1,0 +1,5 @@
+notebooks
+.env
+__pycache__
+groqbot.py
+models
